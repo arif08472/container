@@ -1,0 +1,7 @@
+FROM tomcat:8-jre11
+RUN rm -rf /user/local/tomcat/webapp/*
+COPY target/sscademy-v2.war /user/local/tomcat/webapp/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+WORKDIR /user/local/tomcat/
+VOLUME  /user/local/tomcat/webapp
